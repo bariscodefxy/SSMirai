@@ -1,0 +1,14 @@
+{
+    "name": "bariscodefx/ss-mirai",
+    "description": "A network packet sniffer that finds DDoSer IPs and ban them.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bariscodefxy",
+            "email": "bariscodefx@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
