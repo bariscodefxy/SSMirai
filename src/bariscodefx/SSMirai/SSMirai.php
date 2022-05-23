@@ -11,6 +11,7 @@ class SSMirai {
 	public function __construct(){
 		echo "SSMirai started...";
 		$this->loop = new Loop();
+		$this->loop->startSniffing();
 	}
 
 }

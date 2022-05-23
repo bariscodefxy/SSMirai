@@ -20,8 +20,10 @@ class Loop {
 
 	public function startSniffing() {
 		while(true){
-			socket_recv( $this->tcp->socket, $tcp_packet, 65536, 0 );
-			socket_recv( $this->udp->socket, $udp_packet, 65536, 0 );
+			$tcp_packet = NULL;
+			$udp_packet = NULL;
+			@socket_recv( $this->tcp->socket, $tcp_packet, 65536, 0 );
+			@socket_recv( $this->udp->socket, $udp_packet, 65536, 0 );
 
 			$this->process($tcp_packet, $this->tcp->socket);
 			$this->process($udp_packet, $this->udp->socket);
@@ -29,10 +31,10 @@ class Loop {
 	}
 
 	public function process($packet, $sock){
-		socket_getpeername($sock, $ip, $port);
+		@socket_getpeername($sock, $ip, $port);
 		if(!in_array($ip, $this->IPs))
 		{
-			print_r($IPs);
+			print_r($this->IPs);
 		}
 	}
 
